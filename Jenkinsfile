@@ -23,5 +23,10 @@ pipeline {
                 }
             }
         }
+        stage('Publish') {
+            steps {
+                archiveArtifacts artifacts: 'results.xml', fingerprint: true
+            }
+        }
     }
 }
